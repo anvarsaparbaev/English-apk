@@ -7,9 +7,9 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "preintermediate")
 class Word (
 
-    @PrimaryKey val id:Int,
+    @PrimaryKey val id:Int?,
     @ColumnInfo(name = "english") val english:String?,
-    @ColumnInfo(name = "qaraqalpaq") val qaraqalpaq:String?,
+    @ColumnInfo(name = "qaraqalpaq") val uzbek:String?,
     @ColumnInfo(name = "type") val type:String?,
     @ColumnInfo(name = "transcription") val transcription:String?,
     @ColumnInfo(name = "example") val example:String?,
