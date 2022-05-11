@@ -7,7 +7,7 @@ import uz.data.english_apk.database.entity.Word
 @Dao
 interface WordsDao {
 
-    @Query("select *from preintermediate")
+    @Query("select * from preintermediate")
     fun getAll(): List<Word>
 
     @Query("SELECT * FROM preintermediate where id = :id")

@@ -25,6 +25,9 @@ class WordAdapter(val activity: WordsActivity): RecyclerView.Adapter<WordAdapter
                 itemView.word1.text = word.uzbek+" - "
                 itemView.word2.text = word.english
             }
+            itemView.setOnClickListener {
+                activity.setClickWord(word)
+            }
         }
     }
 

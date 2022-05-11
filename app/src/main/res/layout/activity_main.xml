@@ -57,7 +57,8 @@
                         android:src="@drawable/english_uzbek"/>
                     <Button
                         android:id="@+id/btn_learnEU"
-                        android:layout_width="80dp"
+                        android:layout_width="wrap_content"
+                        android:minWidth="80dp"
                         android:layout_height="40dp"
                         app:layout_constraintTop_toBottomOf="@id/tv_infoEU"
                         app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +120,8 @@
                         android:src="@drawable/english_uzbek"/>
                     <Button
                         android:id="@+id/btn_learnUE"
-                        android:layout_width="80dp"
+                        android:layout_width="wrap_content"
+                        android:minWidth="80dp"
                         android:layout_height="40dp"
                         app:layout_constraintTop_toBottomOf="@id/tv_infoUE"
                         app:layout_constraintStart_toStartOf="parent"
