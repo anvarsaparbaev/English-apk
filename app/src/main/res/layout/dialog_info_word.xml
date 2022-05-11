@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:minWidth="280dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/english"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:text="Word1:"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/englishWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/english"
+        app:layout_constraintTop_toTopOf="@id/english"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:text="Hello"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/uzbek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/english"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:text="Word2:"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/uzbekWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/uzbek"
+        app:layout_constraintTop_toTopOf="@id/uzbek"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:text="Hello"
+        android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/example"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:text="Hello! This is my friend. His name is Hamidulla"
+        app:layout_constraintTop_toBottomOf="@id/uzbek"
+        android:layout_marginVertical="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:paddingEnd="16dp"
+        android:gravity="start"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <Button
+        android:id="@+id/ok_dialog"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="ok"
+        app:layout_constraintTop_toBottomOf="@id/example"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

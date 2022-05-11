@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import uz.data.english_apk.part.LearnActivity
+import uz.data.english_apk.part.WordsActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +19,11 @@ class MainActivity : AppCompatActivity() {
         btn_learnUE.setOnClickListener {
             val intent = Intent(this,LearnActivity::class.java)
             intent.putExtra("partName","Uzbek-English")
+            startActivity(intent)
+        }
+        btn_learnAllWords.setOnClickListener {
+            val intent = Intent(this,WordsActivity::class.java)
+            intent.putExtra("type",2)
             startActivity(intent)
         }
     }
