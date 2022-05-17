@@ -43,7 +43,7 @@
                         android:text="Words of all Units!"
                         app:layout_constraintStart_toStartOf="@id/titleEnglishUzbek"
                         android:gravity="center|start"
-                        android:textSize="17sp"
+                        android:textSize="15sp"
                         app:layout_constraintTop_toBottomOf="@id/titleEnglishUzbek"
                         />
                     <ImageView
@@ -106,7 +106,7 @@
                         android:text="Ha'r bir unitga tegishli so'zlar"
                         app:layout_constraintStart_toStartOf="@id/titleUzbekEnglish"
                         android:gravity="center|start"
-                        android:textSize="17sp"
+                        android:textSize="15sp"
                         app:layout_constraintTop_toBottomOf="@id/titleUzbekEnglish"
                         />
                     <ImageView
@@ -169,7 +169,7 @@
                         android:text="This dictionary use for pre-intermediate degree's word"
                         app:layout_constraintStart_toStartOf="@id/allwords"
                         android:gravity="center|start"
-                        android:textSize="17sp"
+                        android:textSize="15sp"
                         app:layout_constraintTop_toBottomOf="@id/allwords"
                         />
                     <ImageView
@@ -183,7 +183,7 @@
                         android:src="@drawable/dictionary"/>
                     <Button
                         android:id="@+id/btn_learnAllWords"
-                        android:layout_width="80dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         app:layout_constraintTop_toBottomOf="@id/tv_infoAllwords"
                         app:layout_constraintStart_toStartOf="parent"
@@ -223,7 +223,7 @@
                         android:text="These short stories used phrasal verbs"
                         app:layout_constraintStart_toStartOf="@id/shortStories"
                         android:gravity="center|start"
-                        android:textSize="17sp"
+                        android:textSize="15sp"
                         app:layout_constraintTop_toBottomOf="@id/shortStories"
                         />
                     <ImageView
