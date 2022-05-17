@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
+import androidx.core.widget.addTextChangedListener
 import androidx.room.Room
 import kotlinx.android.synthetic.main.activity_words.*
 import kotlinx.android.synthetic.main.dialog_info_word.view.*
 import uz.data.english_apk.R
 import uz.data.english_apk.database.WordDatabase
+import uz.data.english_apk.database.dao.WordsDao
 import uz.data.english_apk.database.entity.Word
 import uz.data.english_apk.part.word.WordAdapter
 
@@ -18,22 +20,24 @@ class WordsActivity : AppCompatActivity() {
     private lateinit var wordAdapter: WordAdapter
     private var unitNumber = 0
     private lateinit var db:WordDatabase
+    private lateinit var wordsDao:WordsDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_words)
         type = intent.getStringExtra("partName").toString()
         unitNumber = intent.getIntExtra("unitNumber",0)
-        db = Room.databaseBuilder(
-            this,
-            WordDatabase::class.java, "base1"
-        )
-            .createFromAsset("base1.db")
-            .allowMainThreadQueries()
-            .fallbackToDestructiveMigration()
-            .build()
-        val wordsDao = db.wordDao()
+        getDB()
+        wordsDao = db.wordDao()
+        getEnUzb()
 
+        search_text.addTextChangedListener {
+            var list = wordsDao.getSearchWordsByEnglish("$it%");
+            wordAdapter.wordList = list.toMutableList()
+        }
+
+    }
+    fun getEnUzb(){
         val tip = intent.getIntExtra("type",0)
         if(tip==2){
             type = "En"
@@ -46,6 +50,17 @@ class WordsActivity : AppCompatActivity() {
             rv_words.adapter = wordAdapter
         }
     }
+    fun getDB(){
+        db = Room.databaseBuilder(
+            this,
+            WordDatabase::class.java, "base1"
+        )
+            .createFromAsset("base1.db")
+            .allowMainThreadQueries()
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
     fun setClickWord(word: Word){
         val view = LayoutInflater.from(this).inflate(R.layout.dialog_info_word,null)
         val wordDialog = AlertDialog.Builder(this).setCancelable(false).setView(view).create()

@@ -14,6 +14,7 @@ class WordAdapter(val activity: WordsActivity): RecyclerView.Adapter<WordAdapter
     var wordList = mutableListOf<Word>()
     set(value) {
         field = value
+        notifyDataSetChanged()
     }
 
     inner class WordViewHolder(itemview:View):RecyclerView.ViewHolder(itemview){

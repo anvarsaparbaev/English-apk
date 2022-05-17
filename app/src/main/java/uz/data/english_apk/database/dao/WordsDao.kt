@@ -16,4 +16,7 @@ interface WordsDao {
     @Query("Select * from preintermediate where unit = :unitNumber")
     fun getByUnit(unitNumber:Int):List<Word>
 
+    @Query("Select * from preintermediate where english like :str")
+    fun getSearchWordsByEnglish(str:String):List<Word>
+
 }
