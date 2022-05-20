@@ -2,6 +2,7 @@ package uz.data.english_apk.database.dao
 
 import androidx.room.Dao
 import androidx.room.Query
+import uz.data.english_apk.database.entity.Sound
 import uz.data.english_apk.database.entity.Word
 
 @Dao
@@ -18,5 +19,8 @@ interface WordsDao {
 
     @Query("Select * from preintermediate where english like :str")
     fun getSearchWordsByEnglish(str:String):List<Word>
+
+    @Query("Select * from sounds")
+    fun getAllSounds():List<Sound>
 
 }

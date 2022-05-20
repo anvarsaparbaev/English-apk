@@ -53,9 +53,9 @@ class WordsActivity : AppCompatActivity() {
     fun getDB(){
         db = Room.databaseBuilder(
             this,
-            WordDatabase::class.java, "base1"
+            WordDatabase::class.java, "base2"
         )
-            .createFromAsset("base1.db")
+            .createFromAsset("base2.db")
             .allowMainThreadQueries()
             .fallbackToDestructiveMigration()
             .build()

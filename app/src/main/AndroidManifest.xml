@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
-        <activity android:name=".part.WordsActivity"></activity>
+        <activity android:name=".part.game.GameActivity"></activity>
+        <activity android:name=".part.story.SoundPlayActivity" />
+        <activity android:name=".part.story.StoryActivity" />
+        <activity android:name=".part.WordsActivity" />
         <activity android:name=".part.LearnActivity" />
         <activity
             android:name=".MainActivity"
